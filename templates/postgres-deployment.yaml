@@ -3,21 +3,21 @@ apiVersion: apps/v1
 metadata:
   name: postgres-deployment
 spec:
-  replicas: {{.Values.postgres.replicas}}
+  replicas: 1
   selector:
     matchLabels:
-      app: {{.Values.postgres.metadata.labels.app}}
+      app: postgres
   template:
     metadata:
       labels:
-        app: {{.Values.postgres.metadata.labels.app}}
+        app: postgres
     spec:
       containers:
         - name: postgres-container
-          image: {{.Values.postgres.image}}
+          image: postgres:13.1-alpine
           imagePullPolicy: "IfNotPresent"
           ports:
-            - containerPort: {{.Values.postgres.ports.port}}
+            - containerPort: 5432
           envFrom:
             - configMapRef:
                 name: postgres-config
