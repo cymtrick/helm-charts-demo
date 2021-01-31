@@ -27,4 +27,4 @@ spec:
     - {{.Values.postgres.PersistentVolumeClaim.accessModes}}
   resources:
     requests:
-      storage: {{.Values.postgres.PersPersistentVolumeClaimistentVolume.capacity.storage}}
+      storage: {{.Values.postgres.PersistentVolumeClaim.capacity.storage}}

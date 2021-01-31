@@ -6,8 +6,8 @@ metadata:
   labels:
     app: postgres
 data:
-  POSTGRES_DB: {{.Values.data.POSTGRES_DB}}
-  POSTGRES_USER: {{.Values.data.POSTGRES_USER}}
-  POSTGRES_PASSWORD: {{.Values.data.POSTGRES_PASSWORD}}
-  POSTGRES_PORT: {{.Values.data.POSTGRES_PORT}}
-  DATABASE_URL: {{.Values.data.DATABASE_URL}}
+  POSTGRES_DB: {{.Values.postgres.data.POSTGRES_DB}}
+  POSTGRES_USER: {{.Values.postgres.data.POSTGRES_USER}}
+  POSTGRES_PASSWORD: {{.Values.postgres.data.POSTGRES_PASSWORD}}
+  POSTGRES_PORT: {{.Values.postgres.data.POSTGRES_PORT}}
+  DATABASE_URL: {{.Values.postgres.data.DATABASE_URL}}

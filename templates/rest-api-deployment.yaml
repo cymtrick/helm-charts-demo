@@ -3,22 +3,22 @@ kind: Deployment
 metadata:
   name: rest-api-deployment
   labels:
-    app: {{.Values.rest-api.name}}
+    app: {{.Values.restapi.name}}
 spec:
-  replicas: {{.Values.rest-api.replicas}}
+  replicas: {{.Values.restapi.replicas}}
   selector:
     matchLabels:
-      app: {{.Values.rest-api.labels.app}}
+      app: {{.Values.restapi.labels.app}}
   template:
     metadata:
       labels:
-        app: {{.Values.rest-api.labels.app}}
+        app: {{.Values.restapi.labels.app}}
     spec:
       containers:
-        - name: {{.Values.rest-api.template.spec.containers.name}}
-          image: {{.Values.rest-api.template.spec.containers.image}}
+        - name: {{.Values.restapi.template.spec.containers.name}}
+          image: {{.Values.restapi.template.spec.containers.image}}
           ports:
-            - containerPort: {{.Values.rest-api.template.spec.containers.ports.containerPort}}
+            - containerPort: 5000
           env:
             - name: DATABASE_URL
               valueFrom: 

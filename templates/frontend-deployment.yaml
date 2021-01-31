@@ -19,4 +19,4 @@ spec:
       - name: {{.Values.frontend.containers.name}}
         image: {{.Values.frontend.containers.image}}
         ports:
-        - containerPort: {{.Values.frontend.containers.ports.containerPort}}
+        - containerPort: 80

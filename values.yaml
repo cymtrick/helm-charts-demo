@@ -1,5 +1,5 @@
 
-rest-api:
+restapi:
   name: rest-api-deployment
   labels:
       app: rest-api
@@ -8,10 +8,10 @@ rest-api:
   template:
     spec:
       containers:
-        - name: rest-api-container
+          name: rest-api-container
           image: eu.gcr.io/earnest-acre-297416/rest-api
           ports:
-            - containerPort: 5000
+              containerPort: 5000
               port: 5000
               servicePort: 5000
 
@@ -37,7 +37,7 @@ postgres:
   replicas: 1
   kind: ConfigMap
   ports:
-    - port: 5432
+      port: 5432
       nodePort: 30001
       targetPort: 5432
   metadata:
@@ -57,9 +57,9 @@ postgres:
     capacity:
       storage: 5Gi
     accessModes:
-      - ReadWriteMany
+       ReadWriteMany
   PersistentVolumeClaim:
     accessModes:
-      - ReadWriteMany
+       ReadWriteMany
     capacity:
       storage: 5Gi

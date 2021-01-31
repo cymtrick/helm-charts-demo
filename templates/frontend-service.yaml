@@ -6,8 +6,8 @@ spec:
   type: NodePort
   ports:
   - protocol: TCP
-    nodePort: {{.Values.frontend.containers.ports.nodePort}}
-    port: {{.Values.frontend.containers.ports.port}}
-    targetPort: {{.Values.frontend.containers.ports.targetPort}}
+    nodePort: 30002
+  - port: 8091
+    targetPort: 80
   selector:
     app: {{.Values.frontend.metadata.labels.app}}
