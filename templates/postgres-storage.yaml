@@ -4,7 +4,6 @@ metadata:
   name: postgres-pv-volume
   labels:
     type: local
-<<<<<<< HEAD
     app: postgres
 spec:
   storageClassName: slow
@@ -14,17 +13,6 @@ spec:
     - ReadWriteMany
   hostPath:
     path: "/var/lib/data"
-=======
-    app: {{.Values.postgres.metadata.labels.app}}
-spec:
-  storageClassName: slow
-  capacity:
-    storage: {{.Values.postgres.PersistentVolume.capacity.storage}}
-  accessModes:
-    - {{.Values.postgres.PersistentVolume.accessModes}}
-  hostPath:
-    path: {{.Values.postgres.PersistentVolume.hostPath.path}}
->>>>>>> b75e83abf86f899e2739f0f2b56133a8c58813cb
 
 ---
 kind: PersistentVolumeClaim
@@ -32,7 +20,6 @@ apiVersion: v1
 metadata:
   name: postgres-pv-claim
   labels:
-<<<<<<< HEAD
     app: postgres
 spec:
   storageClassName: slow
@@ -41,13 +28,3 @@ spec:
   resources:
     requests:
       storage: 5Gi
-=======
-    app: {{.Values.postgres.metadata.labels.app}}
-spec:
-  storageClassName: slow
-  accessModes:
-    - {{.Values.postgres.PersistentVolumeClaim.accessModes}}
-  resources:
-    requests:
-      storage: {{.Values.postgres.PersistentVolumeClaim.capacity.storage}}
->>>>>>> b75e83abf86f899e2739f0f2b56133a8c58813cb
