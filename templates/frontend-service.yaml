@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.frontend.metadata.serviceName}}
+spec:
+  type: NodePort
+  ports:
+  - protocol: TCP
+    nodePort: {{.Values.frontend.spec.spec.containers.ports.nodePort}}
+    port: {{.Values.frontend.spec.spec.containers.ports.port}}
+    targetPort: {{.Values.frontend.spec.spec.containers.ports.targetPort}}
+  selector:
+    app: {{.Values.frontend.metadata.labels.app}}
