@@ -16,7 +16,7 @@ spec:
         app: {{.Values.frontend.metadata.labels.app}}
     spec:
       containers:
-      - name: {{.Values.frontend.spec.spec.containers.name}}
-        image: {{.Values.frontend.spec.spec.containers.image}}
+      - name: {{.Values.frontend.containers.name}}
+        image: {{.Values.frontend.containers.image}}
         ports:
-        - containerPort: {{.Values.frontend.spec.spec.containers.ports.containerPort}}
+        - containerPort: {{.Values.frontend.containers.ports.containerPort}}
