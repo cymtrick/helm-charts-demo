@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD
 rest-api:
-=======
-restapi:
->>>>>>> b75e83abf86f899e2739f0f2b56133a8c58813cb
   name: rest-api-deployment
   labels:
       app: rest-api
@@ -12,17 +8,10 @@ restapi:
   template:
     spec:
       containers:
-<<<<<<< HEAD
         - name: rest-api-container
           image: eu.gcr.io/earnest-acre-297416/rest-api
           ports:
             - containerPort: 5000
-=======
-          name: rest-api-container
-          image: eu.gcr.io/earnest-acre-297416/rest-api
-          ports:
-              containerPort: 5000
->>>>>>> b75e83abf86f899e2739f0f2b56133a8c58813cb
               port: 5000
               servicePort: 5000
 
@@ -33,7 +22,6 @@ frontend:
       app: test
     serviceName: rest-api-service
   replicas: 3
-<<<<<<< HEAD
     selector:
       spec:
         containers:
@@ -41,13 +29,6 @@ frontend:
           image: eu.gcr.io/earnest-acre-297416/ui-test
           ports:
           - containerPort: 80
-=======
-  containers:
-          name: itest-container
-          image: eu.gcr.io/earnest-acre-297416/ui-test
-          ports:
-            containerPort: 80
->>>>>>> b75e83abf86f899e2739f0f2b56133a8c58813cb
             nodePort: 30002
             port: 8091
             targetPort: 80
@@ -58,11 +39,7 @@ postgres:
   replicas: 1
   kind: ConfigMap
   ports:
-<<<<<<< HEAD
     - port: 5432
-=======
-      port: 5432
->>>>>>> b75e83abf86f899e2739f0f2b56133a8c58813cb
       nodePort: 30001
       targetPort: 5432
   metadata:
@@ -82,16 +59,9 @@ postgres:
     capacity:
       storage: 5Gi
     accessModes:
-<<<<<<< HEAD
       - ReadWriteMany
   PersistentVolumeClaim:
     accessModes:
       - ReadWriteMany
-=======
-       ReadWriteMany
-  PersistentVolumeClaim:
-    accessModes:
-       ReadWriteMany
->>>>>>> b75e83abf86f899e2739f0f2b56133a8c58813cb
     capacity:
       storage: 5Gi
