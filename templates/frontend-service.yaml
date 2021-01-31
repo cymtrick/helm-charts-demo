@@ -6,8 +6,8 @@ spec:
   type: NodePort
   ports:
   - protocol: TCP
-    nodePort: {{.Values.frontend.spec.spec.containers.ports.nodePort}}
-    port: {{.Values.frontend.spec.spec.containers.ports.port}}
-    targetPort: {{.Values.frontend.spec.spec.containers.ports.targetPort}}
+    nodePort: {{.Values.frontend.containers.ports.nodePort}}
+    port: {{.Values.frontend.containers.ports.port}}
+    targetPort: {{.Values.frontend.containers.ports.targetPort}}
   selector:
     app: {{.Values.frontend.metadata.labels.app}}
