@@ -22,7 +22,7 @@ frontend:
       app: test
     serviceName: rest-api-service
   replicas: 3
-    selector:
+  selector:
       spec:
         containers:
         - name: itest-container
